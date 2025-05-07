@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>RANDAL DANÇARINO</title>
+    <style>
+        .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 700px;
+        }
+
+        h3{
+
+        text-align: center;
+
+        }
+
+    </style>
+    <script>
+        let segundos = 0;
+        let minutos = 0;
+        let horas = 0;
+
+        function atualizarTempo() {
+            segundos++;
+            if (segundos === 60) {
+                segundos = 0;
+                minutos++;
+                if (minutos === 60) {
+                    minutos = 0;
+                    horas++;
+                }
+            }
+            document.getElementById("cronometro").innerText =
+                horas.toString().padStart(2, '0') + ":" +
+                minutos.toString().padStart(2, '0') + ":" +
+                segundos.toString().padStart(2, '0');
+        }
+
+        setInterval(atualizarTempo, 1000);
+    </script>
+</head>
+<body>
+
+<div class="container"><img src="randaldancarino.gif">
+
+<h3>Você está vendo Randal Ivory dançando em <span id="cronometro">00:00:00</span></h3>
+</div>
+
+</body>
+</html>
